@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "diretivas": {
+    "angular-libs-externas": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/diretivas",
+            "outputPath": "dist/angular-libs-externas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,12 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js"
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -61,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "diretivas:build"
+            "browserTarget": "angular-libs-externas:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "diretivas:build:production"
+              "browserTarget": "angular-libs-externas:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "diretivas:build"
+            "browserTarget": "angular-libs-externas:build"
           }
         },
         "test": {
@@ -82,8 +84,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
+            "styles": [         
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -106,7 +108,7 @@
         }
       }
     },
-    "diretivas-e2e": {
+    "angular-libs-externas-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "diretivas:serve"
+            "devServerTarget": "angular-libs-externas:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "diretivas:serve:production"
+              "devServerTarget": "angular-libs-externas:serve:production"
             }
           }
         },
@@ -135,7 +137,7 @@
       }
     }
   },
-  "defaultProject": "diretivas",
+  "defaultProject": "angular-libs-externas",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"
