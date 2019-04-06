@@ -1,0 +1,39 @@
+<!-- exemplo de diretivas customizadas 'fundoAmarelo' 'highlightMouse' 'appHighlight' -->
+<p fundoAmarelo>
+  Texto com fundo amarelo.
+</p>
+
+<!-- diretiva não funciona no button pq foi setada apenas para paragráfos -> p[fundoAmarelo] -->
+<button fundoAmarelo>
+  OK
+</button>
+
+<br><br>
+
+<p highlightMouse>Texto com highlight quando passo o mouse.</p>
+
+<p appHighlight [defaultColor]="'gray'" [highlightColor]="'red'">Texto com highlight com cores personalizadas.</p>
+
+<br><br>
+
+<h5>Diretiva estruturada customizada - ngElse</h5>
+
+<div *ngIf="mostrarCursos">
+  mostrando!!
+</div>
+  
+<div *appNgElse="mostrarCursos">
+  escondendo!!
+</div>
+  
+<br>
+  
+<button (click)="onClick()">mostrar ou esconder</button>
+
+<br><br>
+
+<ng-template [appNgElse]="mostrarCursos">
+  <div>
+    escondendo com template!!
+  </div>
+</ng-template>
