@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivaNgforComponent implements OnInit {
 
-  cursos: string[] = ['Angular', 'Ionic', 'Typescript', 'Phonegape'];
+  cursos: string[] = ['Angular', 'Ionic', 'Typescript', 'Phonegap'];
   constructor() { }
 
   ngOnInit() {
