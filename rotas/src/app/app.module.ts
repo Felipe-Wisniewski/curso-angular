@@ -1,3 +1,4 @@
+import { AlunosGuard } from './guards/alunos.guard';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-import { CursosGuard } from './cursos/cursos.guard';
+import { CursosGuard } from './guards/cursos.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CursosGuard } from './cursos/cursos.guard';
   providers: [
     AuthService,
     AuthGuard,
-    CursosGuard
+    CursosGuard,
+    AlunosGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,11 @@
+import { AlunosGuard } from './guards/alunos.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import { CursosGuard } from './cursos/cursos.guard';
+import { CursosGuard } from './guards/cursos.guard';
 
 const routes: Routes  = [
   { path: 'cursos', 
