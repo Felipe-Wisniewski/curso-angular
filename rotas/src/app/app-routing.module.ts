@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CursosGuard } from './guards/cursos.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes  = [
   { path: 'cursos',
@@ -20,12 +21,15 @@ const routes: Routes  = [
     canActivate: [AuthGuard],
     canLoad: [AuthGuard] },
 
+  { path: 'login',
+    component: LoginComponent },
+
   { path: '',
     component: HomeComponent,
     canActivate: [AuthGuard] },
 
-  { path: 'login',
-    component: LoginComponent }
+  { path: '**',
+    component: PageNotFoundComponent }
 ];
 
 @NgModule({
