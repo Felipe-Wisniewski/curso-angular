@@ -1,0 +1,11 @@
+<div *ngIf="cursos$ | async as cursos ; else loading">
+
+  <li *ngFor="let curso of cursos">
+    {{ curso.nome }}
+  </li>
+
+</div>
+
+<ng-template #loading>
+  <span>Carregando cursos..</span>
+</ng-template>
